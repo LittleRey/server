@@ -148,9 +148,7 @@ hook.request.before = (ctx) => {
 			hook.target.host.has(host)
 		) &&
 		req.method === 'POST' &&
-		(url.path.startsWith('/eapi/') || // eapi
-			// url.path.startsWith('/api/') || // api
-			url.path.startsWith('/api/linux/forward')) // linuxapi
+		(url.path.startsWith('/eapi/') || url.path.startsWith('/api/'))
 	) {
 		return request
 			.read(req)
